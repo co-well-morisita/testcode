@@ -1,20 +1,18 @@
-﻿version: 0.0
+version: 0.0
 os: linux
-
-
-files: 
-# You can specify one or more mappings in the files section.
-  - source: /
-    destination: /home/ec2-user
+files:
+  - source: /index.html
+    destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: Scripts/BeforeInstall.sh
-  AfterInstall:
-    - location: Scripts/AfterInstall.sh
-      timeout: 60
-  ApplicationStart:
-    - location: Scripts/ApplicationStart.sh
-      timeout: 60
-  ValidateService:
-    - location: Scripts/ValidateService.sh
-      timeout: 60
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
+
