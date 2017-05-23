@@ -9,12 +9,16 @@ files:
 hooks:
   BeforeInstall:
     - location: Scripts/BeforeInstall.sh
+    
   AfterInstall:
     - location: Scripts/AfterInstall.sh
+    
       timeout: 60
   ApplicationStart:
     - location: Scripts/ApplicationStart.sh
+    
       timeout: 60
   ValidateService:
     - location: Scripts/ValidateService.sh
+    
       timeout: 60
