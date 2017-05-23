@@ -1,5 +1,6 @@
-﻿version: 0.0
+version: 0.1
 os: linux
+
 
 files: 
 # You can specify one or more mappings in the files section.
