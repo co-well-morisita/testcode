@@ -12,7 +12,7 @@ deployment: # デプロイ詳細
           revision_type: S3
           s3_location: # S3の設定
             bucket: tst-circleci-morishita # bucket名
-            key_pattern: xxxx-{BRANCH}-{SHORT_COMMIT}
+            key_pattern: xxxx-{BRANCH}-{SHORT_COMMIT}.zip
         deployment_group: tst-circleCI-morishita # CodeDeployのデプロイグループ名
         deployment_config: CodeDeployDefault.AllAtOnce
   production: # （本番）
@@ -25,6 +25,6 @@ deployment: # デプロイ詳細
           revision_type: S3
           s3_location: # S3の設定
             bucket: tst-circleci-morishita # bucket名
-            key_pattern: xxxx-{BRANCH}-{SHORT_COMMIT}
+            key_pattern: xxxx-{BRANCH}-{SHORT_COMMIT}.zip
         deployment_group: tst-circleCI-morishita # CodeDeployのデプロイグループ名
         deployment_config: CodeDeployDefault.AllAtOnce
