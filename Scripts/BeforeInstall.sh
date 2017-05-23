@@ -1,1 +1,2 @@
-BeforeInstall.sh
+#!/bin/bash
+echo hoge > before
